@@ -177,7 +177,7 @@
                         <!-- Service Image -->
                         <div class="content">
                             <i class="fa-solid fa-wifi"></i> <!-- Internet Icon -->
-                            <a href="pages/Pages/Service-Single.html">
+                            <a href="{{ route('service-detail', $service->id) }}">
                                 <h3>{{ $service->title }}</h3>
                             </a> <!-- Service Title -->
                             <p>{{ $service->short_description }}</p>

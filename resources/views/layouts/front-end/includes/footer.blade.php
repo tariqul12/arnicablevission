@@ -36,18 +36,11 @@
         <div class="footer-item">
             <h2>Our Services</h2>
             <div class="info links">
-                <p><i class="fa-solid fa-wifi"></i><a href="#">Internet Plans</a>
-                </p>
-                <p><i class="fa-solid fa-wifi"></i><a href="#">Cable Packages</a>
-                </p>
-                <p><i class="fa-solid fa-wifi"></i><a href="#">Bundled
-                        Services</a></p>
-                <p><i class="fa-solid fa-wifi"></i><a href="#">Technical
-                        Support</a></p>
-                <p><i class="fa-solid fa-wifi"></i><a href="#">Customer Care</a>
-                </p>
-                <p><i class="fa-solid fa-wifi"></i><a href="#">Home
-                        Installation</a></p>
+                @foreach ($footer_services as $service)
+                    <p><i class="fa-solid fa-wifi"></i><a
+                            href="{{ route('service-detail', $service->id) }}">{{ $service->title }}</a>
+                    </p>
+                @endforeach
             </div>
         </div>
 

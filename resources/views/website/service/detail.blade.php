@@ -51,16 +51,16 @@
 
             <!-- Service Image -->
             <div class="image">
-                <img src="{{ asset($service->image) }}" alt="Internet Plans">
+                <img src="{{ asset($service_detail->image) }}" alt="Internet Plans">
             </div>
 
             <div class="content">
 
                 <!-- Service Main Heading -->
-                <h3 class="main-heading">{{ $service->title }}</h3>
+                <h3 class="main-heading">{{ $service_detail->title }}</h3>
 
                 <!-- Service Description -->
-                <p>{!! $service->long_description !!}</p>
+                <p>{!! $service_detail->long_description !!}</p>
 
             </div>
 

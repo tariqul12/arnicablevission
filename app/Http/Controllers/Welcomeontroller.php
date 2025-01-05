@@ -52,9 +52,9 @@ class Welcomeontroller extends Controller
     }
     public function detail($id)
     {
-        $service = Service::find($id);
+        $service_detail = Service::find($id);
         $services = Service::where('status', 1)->latest()->get();
-        return view('website.service.detail', compact('service','services'));
+        return view('website.service.detail', compact('service_detail','services'));
     }
     public function quotation()
     {
