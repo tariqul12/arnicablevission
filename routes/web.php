@@ -45,6 +45,8 @@ Route::post('/package/order/', [Welcomeontroller::class, 'order'])->name('packag
 
 Route::get('/package/order/', [Welcomeontroller::class, 'packageOrder'])->name('packageOrder');
 
+Route::get('/package/single/order/{id}', [Welcomeontroller::class, 'packageSingleOrder'])->name('package.single.order');
+
 Route::get('/policy/pages', [Welcomeontroller::class, 'policy'])->name('policy.page');
 
 Route::get('/tcondition/pages', [Welcomeontroller::class, 'tcondition'])->name('tcondition.page');
@@ -82,7 +84,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::resource('brand', BrandController::class);
 
     Route::resource('client', ClientController::class);
-    
+
     Route::resource('team', TeamController::class);
 
     Route::resource('service', ServiceController::class);

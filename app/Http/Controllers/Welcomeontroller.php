@@ -29,12 +29,12 @@ class Welcomeontroller extends Controller
         $about = About::orderBy('id', 'desc')->first();
         $packages = Package::where('status', 1)->orderBy('id', 'desc')->take(4)->get();
         $sliders = Slider::where('status', 1)->orderBy('id', 'desc')->take(4)->get();
-        $home_banner = Banner::where(['banner_type'=>2])->orderBy('id', 'desc')->first();
-        $order_banner = Banner::where(['banner_type'=>4])->orderBy('id', 'desc')->first();
+        $home_banner = Banner::where(['banner_type' => 2])->orderBy('id', 'desc')->first();
+        $order_banner = Banner::where(['banner_type' => 4])->orderBy('id', 'desc')->first();
         $clients = Client::whereStatus(1)->orderBy('id', 'desc')->take(6)->get();
         $teams = Team::whereStatus(1)->orderBy('id', 'desc')->take(6)->get();
         $brands = Brand::whereStatus(1)->orderBy('id', 'desc')->get();
-        return view('website.home.index', compact('about', 'packages', 'services', 'categories', 'sliders','home_banner','order_banner','clients','teams','brands'));
+        return view('website.home.index', compact('about', 'packages', 'services', 'categories', 'sliders', 'home_banner', 'order_banner', 'clients', 'teams', 'brands'));
     }
 
     public function about()
@@ -43,7 +43,7 @@ class Welcomeontroller extends Controller
         $frequents = Frequent::orderBy('id', 'desc')->take(5)->get();
         $services = Service::where('status', 1)->orderBy('id', 'desc')->get();
         $brands = Brand::whereStatus(1)->orderBy('id', 'desc')->get();
-        return view('website.about.index', compact('about', 'frequents','services','brands'));
+        return view('website.about.index', compact('about', 'frequents', 'services', 'brands'));
     }
     public function allService()
     {
@@ -54,7 +54,7 @@ class Welcomeontroller extends Controller
     {
         $service_detail = Service::find($id);
         $services = Service::where('status', 1)->latest()->get();
-        return view('website.service.detail', compact('service_detail','services'));
+        return view('website.service.detail', compact('service_detail', 'services'));
     }
     public function quotation()
     {
@@ -73,7 +73,7 @@ class Welcomeontroller extends Controller
 
     public function contact()
     {
-        $contact_banner = Banner::where(['banner_type'=>3])->orderBy('id', 'desc')->first();
+        $contact_banner = Banner::where(['banner_type' => 3])->orderBy('id', 'desc')->first();
         return view('website.contact.index', compact('contact_banner'));
     }
     public function packeages()
@@ -83,9 +83,17 @@ class Welcomeontroller extends Controller
     }
     public function packageOrder()
     {
-        $packages = Package::where('status', 1)->orderBy('id', 'desc')->take(4)->get();
-        $order_banner = Banner::where(['banner_type'=>4])->orderBy('id', 'desc')->first();
-        return view('website.order.index', compact('packages','order_banner'));
+        $packages = Package::where('status', 1)->orderBy('id', 'desc')->get();
+        $order_banner = Banner::where(['banner_type' => 4])->orderBy('id', 'desc')->first();
+        return view('website.order.index', compact('packages', 'order_banner'));
+    }
+
+    public function packageSingleOrder($id)
+    {
+        $single_package = Package::find($id);
+        $packages = Package::where('status', 1)->orderBy('id', 'desc')->get();
+        $order_banner = Banner::where(['banner_type' => 4])->orderBy('id', 'desc')->first();
+        return view('website.order.singleorder', compact('single_package', 'packages', 'order_banner'));
     }
     public function ftp()
     {

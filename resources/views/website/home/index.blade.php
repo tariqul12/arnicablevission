@@ -247,7 +247,7 @@
                                 <div class="price">${{ $package->price }}</div>
                                 <p>/ month</p>
                             </div>
-                            <a href="" class="btn">Get Started</a>
+                            <a href="{{ route('package.single.order', $package->id) }}" class="btn">Get Started</a>
 
                         </div>
                     </div>

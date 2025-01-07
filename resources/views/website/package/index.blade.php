@@ -52,7 +52,7 @@
                                 <div class="price">TK:{{ $package->price }}</div>
                                 <p> month</p>
                             </div>
-                            <a href="{{ route('package.order', $package->id) }}" class="btn">Get Started</a>
+                            <a href="{{ route('package.single.order', $package->id) }}" class="btn">Get Started</a>
                         </div>
                     </div>
                 </div>
