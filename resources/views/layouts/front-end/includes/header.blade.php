@@ -38,7 +38,7 @@
                 <a class="nav-btn" href="{{ route('about') }}">About</a>
                 <a class="nav-btn" href="{{ route('all-service') }}">Services</a>
                 <a class="nav-btn" href="{{ route('packeages') }}">Packages</a>
-                <a target="_blank" class="nav-btn" href="#">FTP Server</a>
+                <a class="nav-btn" href="{{ route('paybill') }}">Bill Pay</a>
                 <a class="nav-btn" href="{{ route('contact') }}">contact</a>
             </nav>
 

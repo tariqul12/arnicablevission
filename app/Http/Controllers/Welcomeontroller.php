@@ -99,6 +99,10 @@ class Welcomeontroller extends Controller
     {
         return view('website.ftp.index');
     }
+    public function paybill()
+    {
+        return view('website.paybill.index');
+    }
     public function order(Request $request)
     {
         $consultation                = new Consultation();

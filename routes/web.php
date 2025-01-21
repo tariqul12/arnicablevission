@@ -35,6 +35,8 @@ Route::get('/packeages', [Welcomeontroller::class, 'packeages'])->name('packeage
 
 Route::get('/ftp/server', [Welcomeontroller::class, 'ftp'])->name('ftp');
 
+Route::get('/payment/paybill', [Welcomeontroller::class, 'paybill'])->name('paybill');
+
 Route::get('all/service', [Welcomeontroller::class, 'allService'])->name('all-service');
 
 Route::get('service/detail/{id}', [Welcomeontroller::class, 'detail'])->name('service-detail');
